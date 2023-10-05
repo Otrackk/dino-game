@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    height: 100vh;
+    background: rgb(2, 97, 119);
+    background: linear-gradient(180deg, rgba(2, 97, 119, 1) 0%, rgba(6, 178, 190, 1) 100%);
+}
+
+.sizing-start {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.sizing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.start-btn {
+    background-color: #4ae4a5;
+    color: #333333;
+    padding: 30px;
+    border-radius: 45px;
+    border: 0;
+    margin: 20px;
+    font-size: 3em;
+    font-family: 'Press Start 2P', cursive;
+}
+
+#your-score {
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+}
+
+#score {
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+}
+
+.container {
+    width: 1200px;
+    height: 500px;
+    background-image: url("../assets/bg.jpg");
+}
+
+.main-cont {
+    display: flex;
+    justify-content: center;
+}
+
+#character {
+    width: 100px;
+    background-image: url("../assets/char.png");
+    height: 200px;
+    position: relative;
+    top: 300px;
+}
+
+#block {
+    width: 70px;
+    height: 100px;
+    background-image: url("../assets/block.png");
+    background-size: cover;
+    position: relative;
+    left: 1130px;
+    top: 200px;
+
+}
+
+.slide {
+    animation: slide 1s infinite linear;
+}
+
+.jump {
+    animation: jump 0.5s linear;
+}
+
+@keyframes slide {
+    from {
+        left: 1130px;
+    }
+
+    to {
+        left: -0px;
+    }
+}
+
+@keyframes jump {
+    0% {
+        top: 300px;
+    }
+
+    30% {
+        top: 150px;
+    }
+
+    50% {
+        top: 150px;
+    }
+
+    70% {
+        top: 150px;
+    }
+
+    100% {
+        top: 300px;
+    }
+
+}
