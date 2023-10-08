@@ -9,8 +9,6 @@ yourScore.style.display = "none";
 var score = 1;
 var dead = false;
 
-
-
 block.addEventListener("animationiteration", scoring);
 
 function scoring() {
@@ -46,6 +44,7 @@ function collision() {
         var leftB = parseInt(window.getComputedStyle(block, null).getPropertyValue("left"));
 
         if (topC <= 300 && topC >= 200 && leftB <= 100) {
+            
             block.classList.remove("slide");
             scoreDisplay.innerHTML = "Your score is : " + (score - 1);
             start.innerHTML = "You're dead :(";
