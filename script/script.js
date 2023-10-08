@@ -1,6 +1,7 @@
 var character = document.getElementById("character");
 var block = document.getElementById("block");
 var start = document.getElementById("start-button");
+var startButton = document.getElementById("#start-button");
 var container = document.getElementById("main-cont");
 var scoreDisplay = document.getElementById("score");
 var yourScore = document.getElementById("your-score");
@@ -10,12 +11,12 @@ var score = 1;
 block.addEventListener("animationiteration", scoring);
 
 function scoring() {
-    scoreDisplay.innerHTML = "Score " + score;
+    scoreDisplay.innerHTML = "Score : " + score;
     score += 1;
 }
 
 function startAnimation() {
-    scoreDisplay.innerHTML = "Score : 0";
+    start.innerHTML = "Jump!";
     block.classList.add("slide");
 }
 
@@ -38,8 +39,9 @@ function collision() {
 
         if (topC <= 300 && topC >= 200 && leftB <= 100) {
             block.classList.remove("slide");
-            score -= (score - 1);
-            alert("Sei morto!");
+            scoreDisplay.innerHTML = "Your score is : " + (score - 1);
+            start.innerHTML = "You're dead :(";
+            score = 0;
         }
 
     }, 10);
