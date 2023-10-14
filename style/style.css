@@ -1,49 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+/* === INITIAL === */
+
 body {
+    padding-top: 100px;
     height: 100vh;
-    background: rgb(2, 97, 119);
-    background: linear-gradient(180deg, rgba(2, 97, 119, 1) 0%, rgba(6, 178, 190, 1) 100%);
-}
-
-.sizing-start {
-    display: flex;
-    justify-content: center;
-    margin: 20px;
-}
-
-.sizing {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.start-btn {
-    background-color: #4ae4a5;
-    color: #333333;
-    padding: 30px;
-    border-radius: 45px;
-    border: 0;
-    margin: 20px;
-    font-size: 3em;
-    font-family: 'Press Start 2P', cursive;
-}
-
-#your-score {
-    font-family: 'Press Start 2P', cursive;
-    color: white;
-}
-
-#score {
-    font-family: 'Press Start 2P', cursive;
-    color: white;
+    background:#434352;
 }
 
 .container {
     width: 1200px;
     height: 500px;
-    background-image: url("../assets/bg.jpg");
+    display: flex;
+    background-position-y: bottom;
+    background-image: url("../assets/City4_pale.png");
+    background-size: cover;
+    background-repeat: no-repeat;
     border-radius: 20px;
 }
 
@@ -54,25 +26,33 @@ body {
 
 #character {
     width: 100px;
-    background-image: url("../assets/char.png");
-    height: 200px;
+    height: 150px;
+    left: 100px;
+    top: 320px;
+    background-image: url("../assets/character-standing.gif");
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;
     position: relative;
-    top: 300px;
-    border-radius: 20px;
 }
 
 #block {
-    width: 70px;
-    height: 100px;
-    background-image: url("../assets/block.png");
-    background-position-x: center;
-    background-position-y: center;
+    width: 100px;
+    height: 150px;
+    left: 900px;
+    top: 320px;
+    background-image: url("../assets/enemy-standing.gif");
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    left: 1130px;
-    top: 200px;
-    border-radius: 15px;
 }
+
+.paused{
+    animation-play-state: paused !important;
+}
+
+/* === ANIMATIONS === */
 
 .slide {
     animation: slide 1s infinite linear;
@@ -84,17 +64,17 @@ body {
 
 @keyframes slide {
     from {
-        left: 1130px;
+        left: 900px;
     }
 
     to {
-        left: -0px;
+        left: -130px;
     }
 }
 
 @keyframes jump {
     0% {
-        top: 300px;
+        top: 320px;
     }
 
     30% {
@@ -110,7 +90,46 @@ body {
     }
 
     100% {
-        top: 300px;
+        top: 320px;
     }
 
+}
+
+/* === COMMANDS === */
+
+.sizing-start {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.start-btn {
+    background-color: #4ae4a5;
+    color: #333333;
+    padding: 30px;
+    border-radius: 45px;
+    border: 0;
+    margin: 20px;
+    font-size: 3em;
+    font-family: 'Press Start 2P', cursive;
+}
+
+/* === DISPLAY RESULTS === */
+
+.sizing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#your-score,
+#your-record {
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+}
+
+#score {
+    font-family: 'Press Start 2P', cursive;
+    color: white;
 }
